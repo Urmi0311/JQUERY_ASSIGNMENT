@@ -1,0 +1,28 @@
+/* .my-div{
+    padding: 20px;
+    background-color:bisque;
+    color: black;
+    transition: background-color 0.5s ease-in-out ,color 0.5s ease-in-out ;
+}
+.my-div:hover{
+    background-color: azure;
+    color: white;
+    cursor:pointer;
+} */
+
+.q1{
+    background-color: aqua;
+}
+
+.q2{
+    padding: 20px;
+    background-color:aqua;
+    color: black;
+    transition: background-color 0.5s ease-in-out ,color 0.5s ease-in-out ;
+}
+
+.q2:hover{
+    background-color: black;
+    color: blue;
+    cursor:pointer;
+}

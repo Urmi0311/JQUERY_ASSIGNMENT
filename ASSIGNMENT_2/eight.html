@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>paragrapg_remover</title>
+</script>
+<script>
+$(document).ready(function(){
+  $("#b1").click(function(){
+    alert($("a:first").attr("href"));
+  });
+});
+</script>
+<style>
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+    
+    #new_tab {
+      font-weight: bold;
+    }
+  </style>
+  
+</head>
+
+<body>
+    <div class="main">
+        <a style="width: 180px;" id ='new_tab' href="https://www.google.com/">Google</a><br>
+        <a style="width: 180px;" id ='new_tab' href="https://www.sigmainfo.net/blog/">Blogs</a><br>
+        <a style="width: 180px;" id ='new_tab' href="https://www.google.com/gmail/about/">Gmail</a><br>
+        <a style="width: 180px;" id ='new_tab' href="https://www.sigmainfo.net/">Sigma</a><br>
+  
+ 
+   <br>
+</div>
+   <input style="width: 100px;" type="button" id="b1" value="click">
+   
+</body>
+
+</html>

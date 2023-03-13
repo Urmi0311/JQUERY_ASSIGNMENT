@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Copy Text using jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 1% 2% 2% 2%;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+    </style>
+    <script>
+      $(document).ready(function() {
+        $('#copy-btn').click(function() {
+          var textToCopy = $('#textbox1').val();
+          $('#textbox2').val(textToCopy);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label for="textbox1">Text Box 1:</label>
+    <input type="text" id="textbox1">
+
+    <label for="textbox2">Text Box 2:</label>
+    <input type="text" id="textbox2">
+    <br>
+    <button id="copy-btn">Copy Text</button>
+  </body>
+</html>

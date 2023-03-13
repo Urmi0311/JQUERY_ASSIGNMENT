@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Table Demo</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #ccc;
+            font-weight: bold;
+        }
+
+
+
+
+        td:nth-child(2) {
+            background-color: #f7f7f7;
+        }
+
+        td:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // when the "Create Table" button is clicked
+            $('#createTableBtn').click(function () {
+                // create a table element
+                var table = $('<table>');
+
+                // add some rows and columns to the table
+                for (var i = 0; i < 5; i++) {
+                    var row = $('<tr>');
+                    for (var j = 0; j < 3; j++) {
+                        var cell = $('<td>');
+                        cell.text('Row ' + i + ', Column ' + j);
+                        row.append(cell);
+                    }
+                    table.append(row);
+                }
+
+                // add the table to the container
+                $('#tableContainer').append(table);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="createTableBtn">Create Table</button>
+    <div id="tableContainer"></div>
+</body>
+
+</html>

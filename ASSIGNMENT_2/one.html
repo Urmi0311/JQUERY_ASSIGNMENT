@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Change Background Example</title>
+	<style>
+		.change_back {
+			background-color: #f00;
+			color: #fff;
+		}
+
+		button {
+			padding: 10px;
+			background-color: #4caf50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+
+
+		#myDiv {
+			height: 200px;
+			background-color: #ccc;
+			text-align: center;
+			padding-top: 50px;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#changeBtn').click(function () {
+				$('#myDiv').css('background-color', '#ff0');
+				$(this).addClass('change_back');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="myDiv">
+		<h2>Click the button to change the background color</h2>
+	</div>
+	<button id="changeBtn">Change Background</button>
+</body>
+
+</html>

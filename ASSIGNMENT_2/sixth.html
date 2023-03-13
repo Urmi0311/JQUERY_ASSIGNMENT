@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change P Tag Text Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#changeBtn').click(function() {
+				$('p').text('This text has been changed dynamically.');
+			});
+		});
+	</script>
+    <style>
+        p {
+          font-size: 18px;
+          color: #333;
+          margin-bottom: 20px;
+        }
+      
+        button {
+          padding: 10px 20px;
+          background-color: #f39c12;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      </style>
+      
+</head>
+<body>
+	<p>Initial text.</p>
+	<br>
+	<button id="changeBtn">Change Text</button>
+</body>
+</html>

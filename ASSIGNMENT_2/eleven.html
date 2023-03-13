@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Image on Dropdown Value Change</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <select id="image-select">
+    <option value="1.jpg">Image 1</option>
+    <option value="2.jpeg">Image 2</option>
+    <option value="3.jpg">Image 3</option>
+  </select>
+
+  <img id="image" src="1.jpg" alt="Image 1">
+
+  <script>
+    $(document).ready(function() {
+      $("#image-select").change(function() {
+        var selectedImage = $("#image-select").val();
+        $("#image").attr("src", selectedImage);
+      });
+    });
+  </script>
+
+</body>
+</html>

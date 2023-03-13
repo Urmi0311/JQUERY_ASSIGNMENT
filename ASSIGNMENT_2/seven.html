@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Animation Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		#myImage {
+			position: relative;
+			animation-name: example;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes example {
+			0%   { left: 0px; }
+			50%  { left: 200px; }
+			100% { left: 0px; }
+		}
+	</style>
+</head>
+<body>
+	<img id="myImage" src="1.jpeg" alt="Placeholder Image">
+</body>
+<script>
+	$(document).ready(function() {
+		$('#myImage').hover(function() {
+			$(this).css('animation-play-state', 'paused');
+		}, function() {
+			$(this).css('animation-play-state', 'running');
+		});
+	});
+</script>
+</html>

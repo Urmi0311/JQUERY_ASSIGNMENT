@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remove 3rd P Tag Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		p {
+			border: 1px solid black;
+		}
+		button {
+			background-color: red;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('#removeBtn').click(function() {
+				$('p:eq(2)').remove();
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>First paragraph</p>
+	<p>Second paragraph</p>
+	<p>Third paragraph </p>
+	<p>Fourth paragraph</p>
+	<button id="removeBtn">Remove</button>
+</body>
+</html>

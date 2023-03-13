@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Update Image on Dropdown Value Change</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        .myDiv {
+            display: none;
+            text-align: center;
+        }
+    </style>
+
 </head>
+
 <body>
+    <select id="myselection">
+        <option>Select Option</option>
+        <option value="One">Option 1</option>
+        <option value="Two">Option 2</option>
+        <option value="Three">Option 3</option>
+    </select>
+    <div id="showOne" class="myDiv">
+        <img src="1.jpg" alt="image1" />
+    </div>
+    <div id="showTwo" class="myDiv">
+        <img src="2.jpeg" alt="image2" />
+    </div>
+    <div id="showThree" class="myDiv">
+        <img src="3.jpg" alt="image3" />
+    </div>
 
-  <select id="image-select">
-    <option value="1.jpg">Image 1</option>
-    <option value="2.jpeg">Image 2</option>
-    <option value="3.jpg">Image 3</option>
-  </select>
-
-  <img id="image" src="1.jpg" alt="Image 1">
-
-  <script>
-    $(document).ready(function() {
-      $("#image-select").change(function() {
-        var selectedImage = $("#image-select").val();
-        $("#image").attr("src", selectedImage);
-      });
-    });
-  </script>
+    <script>
+        $(document).ready(function () {
+            $('#myselection').on('change', function () {
+                var demovalue = $(this).val();
+                $("div.myDiv").hide();
+                $("#show" + demovalue).show();
+            });
+        });
+    </script>
 
 </body>
+
 </html>

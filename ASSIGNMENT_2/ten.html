@@ -23,12 +23,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("#remove").click(function(){
-         $("#msg").remove();
+         $("p").remove();
      });
 });
 </script>
 <body>
-   <div id="msg">Click on me to Remove</div>
+   <div id="msg">
+      <p>Click on me to Remove</p></div>
    <button type="button" id="remove">Remove</button>
 </body>
 </html>

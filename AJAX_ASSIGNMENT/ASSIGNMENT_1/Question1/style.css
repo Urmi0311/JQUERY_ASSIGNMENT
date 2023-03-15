@@ -28,7 +28,7 @@ textarea {
     resize: none;
 }
 
-button {
+#btn {
     background-color: #007bff;
     color: #fff;
     padding: 0.5em 1em;

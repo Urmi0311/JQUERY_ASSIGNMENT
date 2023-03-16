@@ -1,0 +1,64 @@
+body{
+    width: 99%;
+}
+
+/* Form styles */
+form {
+    margin: 0 auto;
+    padding : 2% 5% 2% 25%;
+    background-color: #fff;
+   
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  label {
+  
+    width: 100px;
+    text-align: right;
+    margin: 6% 2% 2% 0%;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+  display: inline-block;
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    margin: 20px auto;
+ 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  

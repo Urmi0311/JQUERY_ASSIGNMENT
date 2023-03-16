@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#myform').submit(function (event) {
         event.preventDefault();
+        $('tbody').empty();
         $.ajax({
             type: 'POST',
             url: 'insert.php',

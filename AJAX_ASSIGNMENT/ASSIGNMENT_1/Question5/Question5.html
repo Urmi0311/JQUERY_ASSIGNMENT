@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        $('#add-form').submit(function (event) {
+            event.preventDefault();
+
+            var category = $('#category').val();
+            var name = $('#name').val();
+            var description = $('#description').val();
+            var rating = $('#rating').val();
+
+            $.ajax({
+                url: 'add_item.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    category: category,
+                    name: name,
+                    description: description,
+                    rating: rating
+                },
+                success: function (data) {
+                    alert('Item added successfully!');
+                    $('#category').val('');
+                    $('#name').val('');
+                    $('#description').val('');
+                    $('#rating').val('');
+                    loadList();
+                },
+                error: function (xhr, status, error) {
+                    alert('Error adding item: ' + error);
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <form id="add-form">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category"><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea><br>
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" min="1" max="5"><br>
+        <button type="submit">Add to List</button>
+    </form>
+</body>
+
+</html>

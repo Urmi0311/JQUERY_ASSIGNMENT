@@ -38,9 +38,11 @@ form {
     border-radius: 3px;
     padding: 10px 20px;
     cursor: pointer;
+    margin-left: 6px;
   }
   
   /* Table styles */
+
   table {
     width: 100%;
     margin: 20px auto;

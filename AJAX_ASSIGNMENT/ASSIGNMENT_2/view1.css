@@ -1,0 +1,87 @@
+    body{
+        text-align: center;
+        width: 100%;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    
+    .form label {
+        margin-bottom: 0.5rem;
+
+    
+        padding: 0% 0% 0% 0%;
+    }
+    
+    .form input[type="text"] {
+        padding: 0.5rem;
+   
+        border-radius: 0.25rem;
+    
+        border: 1px solid aqua;
+        margin: 0% 2% 2% 1%;
+    }
+    
+    .form input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    #btn{
+        background-color: #007bff;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+        margin: 1% 2% 3% 2%;
+        
+    }
+    
+   
+    #table  {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #table th, #table td {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+    
+    #table th {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    #table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #mytable  {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #mytable th, #mytable td {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+    
+    #mytable th {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    #mytable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }

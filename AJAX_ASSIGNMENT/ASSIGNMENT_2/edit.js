@@ -5,9 +5,9 @@ $(document).ready(function () {
 
         var formData = {
             id:id,
-            user_id: $('#user_id').val(),
-            post_name: $('#post_name').val(),
-            post_description: $('#post_description').val(),
+            userid: $('#user').val(),
+            postname: $('#postname').val(),
+            postdescription: $('#postdescription').val(),
         }
 
         $.ajax({

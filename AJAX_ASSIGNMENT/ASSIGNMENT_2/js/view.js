@@ -39,19 +39,7 @@ $(document).ready(function () {
                     $('#Title').val('');
                     $('#Description').val('');
                 }
-                // $(".deleteBtn").on("click", function () {
-                //     var id = $(this).data("id");
-                //     var row = $(this).closest("tr");
-                //     $.ajax({
-                //         type: "POST",
-                //         url: "php/delete.php",
-                //         data: { id: id },
-                //         success: function () {
 
-                //             row.remove();
-                //         }
-                //     });
-                // });
                 $(".deleteBtn").on("click", function () {
                     var id = $(this).data("id");
                     var row = $(this).closest("tr");

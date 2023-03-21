@@ -5,14 +5,14 @@ $(document).ready(function () {
 
         var formData = {
             id:id,
-            userid: $('#user').val(),
-            postname: $('#postname').val(),
-            postdescription: $('#postdescription').val(),
+            user_id: $('#user_id').val(),
+            post_name: $('#post_name').val(),
+            post_description: $('#post_description').val(),
         }
 
         $.ajax({
            
-            url: "edit.php",
+            url: "php/edit.php",
             type: "POST",
             data: formData,
             dataType: "JSON",

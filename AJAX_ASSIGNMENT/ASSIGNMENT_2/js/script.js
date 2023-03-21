@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#form').submit(function(event) {
+$(document).ready(function () {
+    $('#form').submit(function (event) {
 
         var formData = {
             fname: $('#fname').val(),
@@ -10,16 +10,19 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'signup.php',
+            url: 'php/signup.php',
             data: formData,
             dataType: 'json',
             encode: true,
-            success: function(response) {
-                if(response){
+            success: function (response) {
+
+                console.log(response);
+                alert(response[0].message);
+                if (response) {
                     window.location.href = "login.html";
                 }
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 console.log("Error:", error);
             }
         });

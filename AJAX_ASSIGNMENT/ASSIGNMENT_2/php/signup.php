@@ -9,7 +9,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 // Insert the user data into the database
-$sql = "INSERT INTO Registrations (firstname, lastname, email, password) 
+$sql = "INSERT INTO Registration (first_name, last_name, email, password) 
 VALUES ('$firstName', '$lastName', '$email', '$password')";
 mysqli_query($conn, $sql);
 

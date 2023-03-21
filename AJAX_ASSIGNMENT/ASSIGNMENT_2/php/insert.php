@@ -10,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+
+
     $sql = "CREATE TABLE IF NOT EXISTS Post (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         Title VARCHAR(100) NOT NULL,
@@ -26,37 +28,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    $sql = "INSERT INTO Post (userid,Title, Description) 
-    VALUES ('$userid','$Title', '$Description')";
 
 
-    if ($conn->query($sql) === TRUE) {
-        // echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    $stmt = $conn->prepare("INSERT INTO Post (userid,Title, Description) 
+VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $userid, $Title, $Description);
+    if ($stmt->execute()) {
+        $stmt->close();
 
+        $stmt_select = $conn->prepare("SELECT * FROM Post");
+        if ($stmt_select->execute()) {
+            $result = $stmt_select->get_result();
 
-    $sql_select = "SELECT * FROM Post";
-    $result = $conn->query($sql_select);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
+                    $userId = $row['userid'];
+                    $title = $row["Title"];
+                    $description = $row["Description"];
 
-            $id = $row['id'];
-            $userid = $row["userid"];
-            $Title = $row["Title"];
-            $Description = $row["Description"];
+                    $return_arr[] = array(
+                        "id" => $id,
+                        "userid" => $userId,
+                        "Title" => $title,
+                        "Description" => $description
+                    );
+                }
+                echo json_encode($return_arr);
+            } else {
+                echo "0 results";
+            }
 
-            $return_arr[] = array(
-                "id" => $id,
-                "userid" => $userid,
-                "Title" => $Title,
-                "Description" => $Description
-            );
+            $stmt_select->close();
+        } else {
+            echo "Error selecting posts: " . $conn->error;
         }
-        echo json_encode($return_arr);
+
     } else {
-        echo "0 results";
+        echo "Error inserting post: " . $conn->error;
+        $stmt->close();
     }
 }

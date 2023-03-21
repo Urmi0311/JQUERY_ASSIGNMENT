@@ -18,7 +18,7 @@ $(document).ready(function () {
 
                 console.log(response);
                 alert(response[0].message);
-                if (response) {
+                if (response[0]["success"]) {
                     window.location.href = "login.html";
                 }
             },

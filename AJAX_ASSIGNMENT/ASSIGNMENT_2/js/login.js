@@ -1,10 +1,11 @@
-$(document).ready(function() {
-    $('#login').submit(function(event) { // changed selector to #login
+
+  $(document).ready(function () {
+    $('#login').submit(function (event) {
   
       var formloginData = {
         email: $('#username').val(),
         password: $('#password').val()
-      };
+      }
   
       $.ajax({
         type: 'POST',
@@ -12,16 +13,19 @@ $(document).ready(function() {
         data: formloginData,
         dataType: 'json',
         encode: true,
-        success: function(response) {
-          if (response) {
-            window.location.href = "view.html";
+        success: function (response) {
+          if (response[0]['success']) {
+            window.location.href = 'view.html'
+          } else {
+            alert(response[0]['message'])
           }
         },
-        error: function(xhr, status, error) {
-          console.log("Error:", error);
+        error: function (xhr, status, error) {
+          console.log('Error:', error)
         }
-      });
-      event.preventDefault();
-    });
-  });
+      })
+      event.preventDefault()
+    })
+  })
+  
   

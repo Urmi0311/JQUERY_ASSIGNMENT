@@ -39,28 +39,45 @@ $(document).ready(function () {
                     $('#Title').val('');
                     $('#Description').val('');
                 }
+                // $(".deleteBtn").on("click", function () {
+                //     var id = $(this).data("id");
+                //     var row = $(this).closest("tr");
+                //     $.ajax({
+                //         type: "POST",
+                //         url: "php/delete.php",
+                //         data: { id: id },
+                //         success: function () {
+
+                //             row.remove();
+                //         }
+                //     });
+                // });
                 $(".deleteBtn").on("click", function () {
                     var id = $(this).data("id");
                     var row = $(this).closest("tr");
-                    $.ajax({
+                    if (confirm("Are you sure to delete")) {
+          
+                      $.ajax({
                         type: "POST",
                         url: "php/delete.php",
                         data: { id: id },
                         success: function () {
-
-                            row.remove();
+          
+                          row.remove();
                         }
-                    });
-                });
-                $(".updateeBtn").on("click", function () {
+                      });
+                    }
+                  });
+                  $(".updateeBtn").on("click", function () {
+                    if (confirm("Are you sure to Update")) {
+            
                     var id = $(this).data("id");
                     sessionStorage.setItem("id", id);
                     window.location.href = 'edit.html';
-                    
-                    
+                    }
                     
                 });
-
+            
 
             }
         });

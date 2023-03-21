@@ -9,12 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
 
-    if (!(preg_match('/^[a-zA-Z ]{1,30}$/', $firstName))) {
+    if (!(preg_match('/^[A-Za-z]+$/', $firstName))) {
         $result_arr[] = array("message" => "Invalid First Name");
         echo json_encode($result_arr);
         exit;
     }
-    if (!(preg_match('/^[a-zA-Z ]{1,30}$/', $lastName))) {
+    if (!(preg_match('/^[A-Za-z]+$/', $lastName))) {
         $result_arr[] = array("message" => "Invalid Last Name");
         echo json_encode($result_arr);
         exit;
